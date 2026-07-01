@@ -36,11 +36,10 @@ jobs:
 
       - name: Build Release
         run: |
-          ./gradlew assembleRelease \
-            -Pandroid.injected.build.abi=arm64-v8a
+          ./gradlew assembleRelease
 
       - name: Upload APKs
         uses: actions/upload-artifact@v7
         with:
           name: release-apks
-          path: app/build/outputs/apk/**/*.apk
+          path: app/build/outputs/apk/**/*arm64-v8a*.apk
